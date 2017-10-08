@@ -26,7 +26,7 @@ bool search(int value, int values[], int n)
     // recursive case; split sorted array into two halves...
     int mid = n/2;
     int *left = values;
-    int *right = values + n/2;
+    int *right = values + mid;
     // ... and check if value in middle is desired value
     if (value == values[mid]) return 1;
     // search left half
