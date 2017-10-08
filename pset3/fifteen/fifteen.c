@@ -20,10 +20,12 @@
 #include <unistd.h>
 #include <string.h>
 
-// constants
+/* constants */
+// limits
 #define DIM_MIN 3
 #define DIM_MAX 9
 #define MAX_LENGTH 4 // max length of input
+// style
 #define NUM_COLORS 7 // number of colors used in rainbow()
 #define TILE_HILIGHT 33 // 30-37 blk,red,grn,yel,blu,mag,cya,whi; 39 none
 #define TILE_BOLD 1 // 1 for bold; 22 for no bold
@@ -37,21 +39,18 @@
 #define RIGHT "l"
 #define RIGHT_ALT "d"
 // movement values; translated to movements by move()
-#define UP_INT 1000
+#define UP_INT 1000 // must be greater than DIM_MAX * DIM_MAX - 1
 #define LEFT_INT UP_INT + 1
 #define DOWN_INT UP_INT + 2
 #define RIGHT_INT UP_INT + 3
 
 // board
 int board[DIM_MAX][DIM_MAX];
-
 // dimensions
 int d;
-
 // coordinates of empty space
 int emprow;
 int empcol;
-
 
 // prototypes
 void clear(void);
